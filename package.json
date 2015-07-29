@@ -1,0 +1,26 @@
+{
+  "name": "fluent.kafe.lorem.js",
+  "version": "1.0.0",
+  "description": "lorem ipsum generator in fluent pattern way",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kafeltz/fluent.kafe.lorem.js.git"
+  },
+  "keywords": [
+    "lorem",
+    "ipsum"
+  ],
+  "author": "Ismael S. Kafeltz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kafeltz/fluent.kafe.lorem.js/issues"
+  },
+  "homepage": "https://github.com/kafeltz/fluent.kafe.lorem.js",
+  "devDependencies": {
+    "bower": "^1.4.1"
+  }
+}

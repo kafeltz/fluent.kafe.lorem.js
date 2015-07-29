@@ -1,0 +1,19 @@
+{
+  "name": "fluent.kafe.lorem.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/kafeltz/fluent.kafe.lorem.js",
+  "authors": [
+    "ismael <shalanga@gmail.com>"
+  ],
+  "description": "lorem generator",
+  "main": "dist/fluent.lorem.js",
+  "keywords": [
+    "lorem",
+    "fluent",
+    "generator"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "qunit": "~1.18.0"
+  }
+}
