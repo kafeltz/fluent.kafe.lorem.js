@@ -22,9 +22,7 @@ var lorem = function()
 	}
 
 	/* case insensitive */
-
-// http://www.utf8-chartable.de/
-
+	// http://www.utf8-chartable.de/
 	function randomly_decorate_token_with_accent( token )
 	{
 		var vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
@@ -34,13 +32,55 @@ var lorem = function()
 
 		var chosen_vowel = vowels[ random_index ];
 
-		// ÀÁÂÄ
-		var a_diatrics = ['\u00C0', '\u00C1', '\u00C2', '\u00C4', '\u00C3' ];
+		// ÀÁÂÃÄÃ
+		var a_diatrics = ['\u00C0', '\u00C1', '\u00C2','\u00C3', '\u00C4', '\u00C3' ];
 
-		// ÈÉÊË
-		var e_diatrics = ['\u00C8', '\u00C9', '\u00CA', '\u00CB' ];
+		// ÉÊË
+		var e_diatrics = ['\u00C9', '\u00CA', '\u00CB' ];
 
-		var o_diatrics = [ '\u00D3', '\u00D4', '\u00D5', '\u00D6' ];
+		// Í
+		var i_diatrics = ['\u00CD'];
+
+		// ÓÔÕÖ
+		var o_diatrics = ['\u00D3', '\u00D4', '\u00D5', '\u00D6'];
+
+		// ÚÜ
+		var u_diatrics = ['\u00DA', '\u00DC'];
+
+		// àáâãä
+		var a_small_diatrics = ['\u00E0', '\u00E1', '\u00E2', '\u00E3', '\u00E4'];
+
+		// éêë
+		var e_small_diatrics = ['\u00E9', '\u00EA', '\u00EB'];
+
+		// í
+		var i_small_diatrics = ['\u00ED'];
+
+		// óôõö
+		var o_small_diatrics = ['\u00F3', '\u00F4', '\u00F5', '\u00F6'];
+
+		// úü
+		var u_small_diatrics = ['\u00FA', '\u00FC'];
+
+		var chosen_diatrics = '';
+
+		switch(chosen_vowel)
+		{
+			case 'a': chosen_diatrics = a_small_diatrics[ Math.floor(Math.random() * a_small_diatrics.length) ]; break;
+			case 'e': chosen_diatrics = e_small_diatrics[ Math.floor(Math.random() * e_small_diatrics.length) ]; break;
+			case 'i': chosen_diatrics = i_small_diatrics[ Math.floor(Math.random() * i_small_diatrics.length) ]; break;
+			case 'o': chosen_diatrics = o_small_diatrics[ Math.floor(Math.random() * o_small_diatrics.length) ]; break;
+			case 'u': chosen_diatrics = u_small_diatrics[ Math.floor(Math.random() * u_small_diatrics.length) ]; break;
+			case 'A': chosen_diatrics = a_diatrics[ Math.floor(Math.random() * a_small_diatrics.length) ]; break;
+			case 'E': chosen_diatrics = e_diatrics[ Math.floor(Math.random() * e_small_diatrics.length) ]; break;
+			case 'I': chosen_diatrics = i_diatrics[ Math.floor(Math.random() * i_small_diatrics.length) ]; break;
+			case 'O': chosen_diatrics = o_diatrics[ Math.floor(Math.random() * o_small_diatrics.length) ]; break;
+			case 'U': chosen_diatrics = u_diatrics[ Math.floor(Math.random() * u_small_diatrics.length) ]; break;
+		}
+
+		var decorated_token = token.replace( chosen_vowel, chosen_diatrics );
+
+		return decorated_token;
 	}
 
 	var words = function( howmany )
@@ -101,6 +141,6 @@ var lorem = function()
 };
 
 var x = new lorem();
-console.log( x.words().asString() );
+console.log( x.words(10).accented().asString() );
 
 
