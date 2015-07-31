@@ -88,6 +88,7 @@ var lorem = function()
 		var tokens = [];
 
 		var accented = false;
+		var titleCase = !false;
 
 		if (howmany === undefined)
 		{
@@ -98,16 +99,28 @@ var lorem = function()
 
 		this.asString = function()
 		{
+			if (titleCase) {
+				tokens[0] = tokens[0].charAt(0).toUpperCase() + tokens[0].substring(1);
+			}
+
 			if (accented) {
 				for(var i=0; i < tokens.length; i++) {
 					tokens[i] = randomly_decorate_token_with_accent( tokens[i] );
 				}
 			}
+
 			return tokens.join(" ");
 		}
 
 		this.asHtml = function()
 		{
+			return this;
+		}
+
+		this.titleCase = function()
+		{
+			titleCase = true;
+
 			return this;
 		}
 

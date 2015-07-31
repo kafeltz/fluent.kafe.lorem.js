@@ -10,7 +10,7 @@ token.paragraphs(2).withRangeOfWords(10, 100)
 a.list(10).composedOfWords(10)
 
 lorem.words(10, 20).asString();
-lorem.words(10).asHtml();
+lorem.words(10).titleCase().asHtml();
 lorem.words(10).accented().asString()
 lorem.seedForRandom(5).words(10).accented().asString()
 
